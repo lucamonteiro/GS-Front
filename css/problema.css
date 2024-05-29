@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+a {
+    color: black;
+    text-decoration: none; 
+}
+
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #0c1f2d;
+    width: 100%;
+    border: ridge;
+}
+
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.navigation ul li a{
+    color: #0c1f2d;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+
+
+.problema {
+    position: relative;
+    height: 100vh; 
+    width: 100vw; 
+}
+
+.problema::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://jornal.usp.br/wp-content/uploads/2023/07/20230703_00_oceano_mar.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    filter: blur(8px); 
+    z-index: -1;
+}
+
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+
+main {
+    padding: 2em 0;
+}
+
+main .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+section h2 {
+    font-size: 1.5em;
+    color: #0077be;
+}
+
+
+
+#h3centro{
+    text-align: center;
+}
+
+
+section {
+    padding: 20px;
+}
+
+.container {
+    position: relative;
+    height: 30vh; 
+    display: flex;
+}
+
+.container img {
+    position: absolute;
+    top: 70%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#home {
+    text-align: center;
+    background-color: #f4f4f4;
+    padding: 50px 20px;
+}
+
+#servicos {
+    background-color: #e2e2e2;
+}
+
+#servicos .servico {
+    margin-bottom: 20px;
+}
+
+#contato {
+    background-color: #f4f4f4;
+}
+
+
+
+footer {
+    background-color: #0c1f2d;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
