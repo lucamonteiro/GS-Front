@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,13 +9,28 @@
     text-decoration: none;
 }
 
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#home h1{
+    text-align: center;
+}
+#home p{
+    text-align: justify;
+}
+
 a {
     color: black;
     text-decoration: none; 
 }
 
-
-.navigation{
+.navigation {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,23 +40,27 @@ a {
     border: ridge;
 }
 
-.navigation ul{
+.navigation ul {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 2rem; 
 }
-.navigation ul li a{
+
+.navigation ul li a {
     color: #0c1f2d;
-    font-size: 17px;
+    font-size: 1rem; 
     font-weight: 500;
 }
-
-
-
+section{
+    max-width: 1400px;
+    margin: 0 auto;
+    border-radius: 10px;
+}
 .problema {
-    position: relative;
-    height: 100vh; 
-    width: 100vw; 
+    display: block; 
+    position: relative; 
+    min-height: 100vh; 
+    flex: 1; 
 }
 
 .problema::before {
@@ -58,59 +77,54 @@ a {
     z-index: -1;
 }
 
-.navigation i{
+.navigation i {
     cursor: pointer;
     font-size: 1.5rem;
 }
 
-
 main {
-    padding: 2em 0;
+    padding: 2rem 0;
 }
 
 main .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1em;
+    padding: 0 1rem;
 }
 
 section {
-    margin-bottom: 2em;
+    margin-bottom: 2rem; 
 }
 
 section h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem; 
     color: #0077be;
 }
 
-
-
-#h3centro{
+#h3centro {
     text-align: center;
 }
 
-
 section {
-    padding: 20px;
+    padding: 1.25rem; 
 }
 
 .container {
     position: relative;
-    height: 30vh; 
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container img {
-    position: absolute;
-    top: 70%; 
-    left: 50%;
-    transform: translate(-50%, -50%);
+    max-width: 100%;
+    height: auto;
 }
 
 #home {
     text-align: center;
     background-color: #f4f4f4;
-    padding: 50px 20px;
+    padding: 3rem 1.25rem; 
 }
 
 #servicos {
@@ -118,33 +132,36 @@ section {
 }
 
 #servicos .servico {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem; 
 }
 
 #contato {
     background-color: #f4f4f4;
 }
 
-
-
 footer {
     background-color: #0c1f2d;
-    padding: 20px;
-    position: absolute;
-    bottom: 0;
+    padding: 1.25rem;
     width: 100%;
     text-align: center;
     color: white;
 }
 
+@media (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
 
+    .navigation {
+        padding: 1rem 2rem;
+    }
 
+    .container {
+        flex-direction: column;
+    }
 
-
-
-
-
-
-
-
-
+    #home {
+        padding: 2rem 1rem;
+    }
+}

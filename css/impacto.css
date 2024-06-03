@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,8 +14,7 @@ a {
     text-decoration: none; 
 }
 
-
-.navigation{
+.navigation {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -25,26 +24,24 @@ a {
     border: ridge;
 }
 
-.navigation ul{
+.navigation ul {
     display: flex;
     align-items: center;
     gap: 5rem;
 }
-.navigation ul li a{
+
+.navigation ul li a {
     color: #0c1f2d;
     font-size: 17px;
     font-weight: 500;
 }
 
-
-
-
-
-
 .impacto {
     position: relative;
     height: 100vh; 
-    width: 100vw; 
+    width: 100vw;
+    position: relative; 
+    min-height: 100vh; 
 }
 
 .impacto::before {
@@ -61,44 +58,32 @@ a {
     z-index: -1;
 }
 
-
-
-
-
-
 footer {
+    margin-top: 88px;
     background-color: #0c1f2d;
     padding: 20px;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     text-align: center;
     color: white;
+    position: relative;
+    bottom: 0;
 }
-
-
-
-
-
 
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
-/* Estilos gerais para as seções */
 .secao {
     padding: 20px;
     text-align: center;
 }
 
-/* Estilos específicos para a Seção 1 */
 .secao1 {
     background-color: #f8f9fa;
     color: #333;
 }
 
-/* Estilos específicos para a Seção 2 */
 .secao2 {
     background-color: #4c4e50;
     color: #fff;
@@ -119,7 +104,6 @@ body {
     color: #fff;
 }
 
-/* Estilos adicionais para uma melhor apresentação */
 h1 {
     margin-bottom: 20px;
 }
@@ -127,6 +111,30 @@ h1 {
 li {
     font-size: 18px;
     text-align: justify;
-
 }
 
+
+@media screen and (max-width: 768px) {
+    .navigation ul {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .navigation {
+        padding: 16px 32px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navigation {
+        flex-direction: column;
+    }
+
+    .navigation ul {
+        gap: 8px;
+    }
+
+    .secao {
+        padding: 10px;
+    }
+}
