@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import "https://unpkg.com/open-props";
 
 * {
     margin: 0;
@@ -7,6 +8,7 @@
     font-family: 'Poppins', sans-serif;
     list-style: none;
     text-decoration: none;
+
 }
 
 html, body {
@@ -18,10 +20,11 @@ body {
     display: flex;
     flex-direction: column;
     line-height: 1.6;
+    background-color: rgb(66, 66, 66);
 }
 
 a {
-    color: black;
+    color:#0c1f2d;
     text-decoration: none;
 }
 
@@ -33,6 +36,7 @@ a {
     box-shadow: 0 0.1rem 0.5rem #0c1f2d;
     width: 100%;
     border: ridge;
+    background-color: white;
 }
 
 .navigation ul {
@@ -42,7 +46,7 @@ a {
 }
 
 .navigation ul li a {
-    color: #0c1f2d;
+    color: #000000;
     font-size: 17px;
     font-weight: 500;
 }
@@ -53,6 +57,7 @@ a {
     flex-direction: column;
     position: relative;
     width: 100%;
+    background-color: rgb(28, 30, 34);
 }
 
 .secao {
@@ -67,6 +72,7 @@ a {
     max-width: 1400px;
     margin: 20px auto 0;
     border-radius: 15px;
+    color: white;
 }
 
 .container {
@@ -80,7 +86,7 @@ a {
 }
 
 .secao2 {
-    background-color: #4c4e50;
+    background-color: #1e5f32;
     color: #fff;
     max-width: 1400px;
     margin: 20px auto; 
@@ -88,6 +94,7 @@ a {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     border-radius: 15px;
     margin-bottom: 20px;
+    
 }
 
 h1 {
@@ -142,99 +149,145 @@ footer {
     }
 }
 
-.carousel {
+@layer demo {
+  fieldset {
+    grid-template-columns: 
+      var(--col-1, 1fr) 
+      var(--col-2, 1fr) 
+      var(--col-3, 1fr) 
+      var(--col-4, 1fr) 
+      var(--col-5, 1fr)
+    ;
+    
+@media (prefers-reduced-motion: no-preference) {
+      transition: grid-template-columns 2s var(--ease-spring-5);
+}
+    
+    &:has(label:nth-child(1) > input:checked) {
+      --col-1: 5fr;
+      --col-2: 3fr;
+    }
+    &:has(label:nth-child(2) > input:checked) {
+      --col-1: 2fr;
+      --col-2: 5fr;
+      --col-3: 2fr;
+    }
+    &:has(label:nth-child(3) > input:checked) {
+      --col-2: 2fr;
+      --col-3: 5fr;
+      --col-4: 2fr;
+    }
+    &:has(label:nth-child(4) > input:checked) {
+      --col-3: 2fr;
+      --col-4: 5fr;
+      --col-5: 2fr;
+    }
+    &:has(label:nth-child(5) > input:checked) {
+      --col-4: 3fr;
+      --col-5: 5fr;
+    }
+    
+    > label {
+      background-image: var(--_img);
+      background-position: center;
+      background-size: auto 125%;
+    }
+  }
+}
+
+@layer demo.support {
+  html {
+    background: var(--gradient-9);
+    block-size: 100%;
+  }
+  
+  /* body {
+    min-block-size: 100%;
+    display: grid;
+    place-content: center;
+    padding: var(--size-5);
+    gap: var(--size-5);
+  } */
+  
+  fieldset {
+    inline-size: 80vw;
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 50vh;
+    gap: var(--size-3);
+    border: none;
+    margin-bottom: 50px;
+    
+    > label {
+      cursor: pointer;
+      border-radius: var(--radius-4);
+      
+      &:focus-within {
+        outline: 1px solid green;
+        outline-offset: 5px;
+      }
+      
+      > input {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.fotos {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 0 auto;
-    padding: 20px 0;
-    gap: 20px; /* Ajuste o espaço entre os itens conforme necessário */
-    position: relative;
+    margin: 0 auto; 
+    padding: 20px; 
+    width: 100%; 
+    max-width: 1200px; 
 }
 
-.carousel__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 35rem;
-    width: 25rem;
-    border-radius: 3px;
-    overflow: hidden;
-    box-shadow: 0 1rem 4rem rgba(0,0,0,.5);
-    transition: transform .2s linear;
-    position: relative;
+.fotos fieldset {
+    width: 100%; 
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-rows: 50vh;
+    gap: 16px; 
+    border: none;
+    place-content: center;
 }
 
-.carousel__item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.carousel__item--main {
-    z-index: 2;
+.fotos fieldset > label {
     cursor: pointer;
-}
-
-.carousel__item--left,
-.carousel__item--right {
-    transform: scale(.9);
-    z-index: 1;
-}
-
-.carousel__item--main:hover,
-.carousel__item--left:hover,
-.carousel__item--right:hover {
-    transform: scale(1.2);
-    z-index: 3;
-}
-
-.carousel__text {
-    position: absolute;
-    bottom: 0;
-    z-index: 4;
-    opacity: 0;
-    transition: opacity .2s;
-    width: 100%;
-    text-align: center;
-    background-color: rgba(0,0,0,.5);
-    padding: 2rem 1rem;
-    color: #fff;
-}
-
-.carousel__item:hover .carousel__text {
-    opacity: 
-}
-
-.carousel__btns {
-    position: absolute;
-    bottom: -30rem;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 8px; 
+    background-image: var(--_img);
+    background-position: center;
+    background-size: cover;
     display: flex;
-    gap: 2rem;
-}
-
-.carousel__btn {
-    background-color: transparent;
-    height: 5rem;
-    width: 5rem;
-    border-radius: 50%;
-    border: 1px solid #0c1f2d;
-    color: #000000;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    width: 100%; 
+    height: 100%; 
 }
 
-.carousel__btn svg {
-    height: 1.8rem;
-    width: 1.8rem;
+.fotos fieldset > label input {
+    opacity: 0; 
 }
 
-.carousel__btn:hover {
-    color: #64dbff;
+@media (max-width: 768px) {
+    .fotos {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .fotos fieldset {
+        grid-template-rows: auto;
+        grid-auto-flow: row;
+    }
 }
+
+@media (max-width: 480px) {
+    .fotos fieldset {
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+    }
+}
+
+

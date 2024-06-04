@@ -4,14 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo de Duas Seções</title>
-    <link rel="stylesheet" href="../css/publico.css">
+    <title>Publico-Alvo</title>
+    <link rel="stylesheet" href="/GS-Front/css/publico.css">
 </head>
 
 <body>
     <header>
         <nav class="navigation">
-            <a href="../index.html"><strong>G20 Brasil</strong></a>
+            <a href="../arquivos/index.html"><strong>G20 Brasil</strong></a>
             <ul class="nav-menu">
                 <li class="nav-item"><a href="problema.html">Problema</a></li>
                 <li class="nav-item"><a href="tecnologia.html">Tecnologia</a></li>
@@ -34,43 +34,27 @@
         <br>
         <br>
         <br>
-        
-        <div class="carousel">
-            <div class="carousel__item carousel__item--left">
-                <img src="https://www.brasilmergulho.com/wp-content/uploads/2016/06/Mergulhadores-Dupla.jpg" >
-                <div class="carousel__text">
-                    <h3>Cute Puppy</h3>
-                    <p>Isn't it cute?!</p>
-                </div>
-            </div>
-            <div class="carousel__item carousel__item--main">
-                <img src="https://ciclovivo.com.br/wp-content/uploads/2022/02/mapear-oceano-ciclovivo-1024x768.jpg" >
-                <div class="carousel__text">
-                    <h3>Cute Puppy</h3>
-                    <p>Isn't it cute?!</p>
-                </div>
-            </div>
-            <div class="carousel__item carousel__item--right">
-                <img src="https://blog.cobasi.com.br/wp-content/uploads/2023/11/AdobeStock_568432724.webp" >
-                <div class="carousel__text">
-                    <h3>Cute Puppy</h3>
-                    <p>Isn't it cute?!</p>
-                </div>
-            </div>
-            <div class="carousel__btns">
-                <button class="carousel__btn" id="leftBtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="currentColor" fill-rule="evenodd" d="m15 4l2 2l-6 6l6 6l-2 2l-8-8z" />
-                    </svg>
-                </button>
-                <button class="carousel__btn" id="rightBtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path fill="currentColor" fill-rule="evenodd" d="m9.005 4l8 8l-8 8L7 18l6.005-6L7 6z" />
-                    </svg>
-                </button>
-            </div>
+    
+        <div class="fotos">
+            <fieldset>
+                <label style="--_img: url(https://ogimg.infoglobo.com.br/in/24710038-e2d-1d3/FT1086A/760/90148372_RS-Rio-de-Janeiro-RJ-22-10-2020100-anos-da-Colonia-de-pescadores-da-Ilha-do-Governador-P.jpg?posicaoFoto2)">
+                  <input type="radio" name="images" >
+                </label>
+                <label style="--_img: url(https://www.infoescola.com/wp-content/uploads/2017/09/poluicao-marinha-325737683.jpg)">
+                  <input type="radio" name="images" >
+                </label>
+                <label style="--_img: url(https://img.odcdn.com.br/wp-content/uploads/2023/01/derretimento-de-geleira.jpg)">
+                  <input type="radio" name="images" >
+                </label>
+                <label style="--_img: url(https://content.nationalgeographic.pt/medio/import/attachment/revistas/207/PlasticoVidaSelvagem/plasani2.jpg)">
+                  <input type="radio" name="images" >
+                </label>
+                <label style="--_img: url(https://classic.exame.com/wp-content/uploads/2019/04/plastico-oceanos.jpg?quality=70&strip=info&w=1024)">
+                  <input type="radio" name="images" >
+                </label>
+            </fieldset>
         </div>
-
+    
         <div class="secao secao2">
             <h2>Publico impactado:</h2>
             <ol>
@@ -89,6 +73,7 @@
             </ol>
         </div>
     </main>
+    
 
     <footer>
         <section>
@@ -97,7 +82,7 @@
             <p>Email: contact@g20.rio.</p>
         </section>
     </footer>
-    <script src="carrosel.js"></script>
+    <script src="/js/carrosel .js"></script>
 </body>
 
 </html>
