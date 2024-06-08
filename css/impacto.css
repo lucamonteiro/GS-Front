@@ -209,6 +209,6 @@ footer {
     width: 100%;
     text-align: center;
     color: white;
-    position: fixed;
+    position: absolute;
     bottom: 0;
 }
